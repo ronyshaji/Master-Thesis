@@ -1,10 +1,10 @@
-<h1>Digital Twin: Development and Validation of Vehicle Simulation for Integration of Highly Automated Driving Functions</h1>
+<h1>Digital Twin: Development and Validation of Vehicle Simulation for Integration of Highly Automated Driving Functions</h1>
 <b>Course:</b> <i>International Automotive Engineering, TH Ingolstadt</i></br>
 <b>Company:</b> <i>Porsche Engineering Services GmbH, Bietigheim-Bissingen</i></br>
 <b>Submitted by:</b> <i>Rony Shaji</i>
 
-![Scenario Based Testing in Virtual Environment](Master Thesis/overview.png)
 
+<img src="/Master Thesis/Overview.png" alt="Scenario Based Testing" title="Scenario Based Testing">   
 
 <h2>Introduction</h2>
 Automated and Autonomous driving is currently the most researched topic in the automotive
