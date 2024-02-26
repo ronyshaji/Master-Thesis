@@ -1,0 +1,291 @@
+<?xml version="1.0" ?>
+<OpenSCENARIO>
+    <FileHeader revMajor="1" revMinor="0" date="2023-08-23T15:40:06" description="Generated OpenSCENARIO File" author="QGIS OSCGenerator Plugin"/>
+    <ParameterDeclarations/>
+    <CatalogLocations/>
+    <RoadNetwork>
+        <LogicFile filepath="P39"/>
+        <SceneGraphFile filepath=""/>
+    </RoadNetwork>
+    <Entities>
+        <ScenarioObject name="ego_vehicle">
+            <Vehicle name="vehicle.lincoln.mkz_2017" vehicleCategory="car">
+                <ParameterDeclarations/>
+                <Performance maxSpeed="69.444" maxAcceleration="200" maxDeceleration="10.0"/>
+                <BoundingBox>
+                    <Center x="1.5" y="0.0" z="0.9"/>
+                    <Dimensions width="2.1" length="4.5" height="1.8"/>
+                </BoundingBox>
+                <Axles>
+                    <FrontAxle maxSteering="0.5" wheelDiameter="0.6" trackWidth="1.8" positionX="3.1" positionZ="0.3"/>
+                    <RearAxle maxSteering="0.0" wheelDiameter="0.6" trackWidth="1.8" positionX="0.0" positionZ="0.3"/>
+                </Axles>
+                <Properties>
+                    <Property name="type" value="ego_vehicle"/>
+                </Properties>
+            </Vehicle>
+        </ScenarioObject>
+    </Entities>
+    <Storyboard>
+        <Init>
+            <Actions>
+                <GlobalAction>
+                    <EnvironmentAction>
+                        <Environment name="Environment1">
+                            <TimeOfDay animation="false" dateTime="2020-10-23T06:00:00"/>
+                            <Weather cloudState="free">
+                                <Sun intensity="0.85" azimuth="0" elevation="1.31"/>
+                                <Fog visualRange="100000"/>
+                                <Precipitation precipitationType="dry" intensity="0"/>
+                            </Weather>
+                            <RoadCondition frictionScaleFactor="1.0"/>
+                        </Environment>
+                    </EnvironmentAction>
+                </GlobalAction>
+                <Private entityRef="ego_vehicle">
+                    <PrivateAction>
+                        <TeleportAction>
+                            <Position>
+                                <WorldPosition x="158.214310" y="-6.308730" z="10.039836" h="2.705260340591211"/>
+                            </Position>
+                        </TeleportAction>
+                    </PrivateAction>
+                    <PrivateAction>
+                        <ControllerAction>
+                            <AssignControllerAction>
+                                <Controller name="HeroAgent_1">
+                                    <Properties>
+                                        <Property name="module" value="carla_ros_scenario_runner.ros_vehicle_control" />
+                                        <Property name="launch" value="carla_ad_agent.launch"/>
+                                        <Property name="launch-package" value="carla_ad_agent"/>
+                                    </Properties>
+                                </Controller>
+                            </AssignControllerAction>
+                            <OverrideControllerValueAction>
+                                <Throttle value="0" active="false"/>
+                                <Brake value="0" active="false"/>
+                                <Clutch value="0" active="false"/>
+                                <ParkingBrake value="0" active="false"/>
+                                <SteeringWheel value="0" active="false"/>
+                                <Gear number="0" active="false"/>
+                            </OverrideControllerValueAction>
+                        </ControllerAction>
+                    </PrivateAction>
+                    <PrivateAction>
+                        <LongitudinalAction>
+                            <SpeedAction>
+                                <SpeedActionDynamics dynamicsShape="step" value="0.1" dynamicsDimension="distance"/>
+                                <SpeedActionTarget>
+                                    <AbsoluteTargetSpeed value="2"/>
+                                </SpeedActionTarget>
+                            </SpeedAction>
+                        </LongitudinalAction>
+                    </PrivateAction>
+                </Private>
+            </Actions>
+        </Init>
+        <Story name="OSC Generated Story">
+            <Act name="OSC Generated Act">
+                <ManeuverGroup maximumExecutionCount="1" name="Maneuver group for ego_vehicle">
+                    <Actors selectTriggeringEntities="false">
+                        <EntityRef entityRef="ego_vehicle"/>
+                    </Actors>
+                    <Maneuver name="Maneuver ID 1">
+                        <Event name="MovingForward" priority="overwrite">
+                            <Action name="MovingForward">
+                                <PrivateAction>
+                                    <RoutingAction>
+                                        <AssignRouteAction>
+                                            <Route name="OSC Generated Route" closed="false">
+                                                <Waypoint routeStrategy="fastest">
+                                                    <Position>
+                                                        <WorldPosition x="156.416931" y="-5.431577" z="10.039836" h="-0.00044804639014223"/>
+                                                    </Position>
+                                                </Waypoint>
+                                                <Waypoint routeStrategy="fastest">
+                                                    <Position>
+                                                        <WorldPosition x="154.619537" y="-4.554424" z="10.039836" h="-0.00044804639014223"/>
+                                                    </Position>
+                                                </Waypoint>
+                                                <Waypoint routeStrategy="fastest">
+                                                    <Position>
+                                                        <WorldPosition x="152.822159" y="-3.677270" z="10.039836" h="-0.00044804639014223"/>
+                                                    </Position>
+                                                </Waypoint>
+                                                <Waypoint routeStrategy="fastest">
+                                                    <Position>
+                                                        <WorldPosition x="150.465927" y="-2.793513" z="10.039836" h="-0.00044804639014223"/>
+                                                    </Position>
+                                                </Waypoint>
+                                                <Waypoint routeStrategy="fastest">
+                                                    <Position>
+                                                        <WorldPosition x="147.906128" y="-2.464231" z="10.039836" h="-0.00044804639014223"/>
+                                                    </Position>
+                                                </Waypoint>
+                                                <Waypoint routeStrategy="fastest">
+                                                    <Position>
+                                                        <WorldPosition x="145.339935" y="-2.739357" z="10.039836" h="-0.00044804639014223"/>
+                                                    </Position>
+                                                </Waypoint>
+                                                <Waypoint routeStrategy="fastest">
+                                                    <Position>
+                                                        <WorldPosition x="142.908096" y="-3.603802" z="10.039836" h="-0.00044804639014223"/>
+                                                    </Position>
+                                                </Waypoint>
+                                                <Waypoint routeStrategy="fastest">
+                                                    <Position>
+                                                        <WorldPosition x="140.744003" y="-5.010152" z="10.039836" h="-0.00044804639014223"/>
+                                                    </Position>
+                                                </Waypoint>
+                                                <Waypoint routeStrategy="fastest">
+                                                    <Position>
+                                                        <WorldPosition x="138.966370" y="-6.881270" z="10.039836" h="-0.00044804639014223"/>
+                                                    </Position>
+                                                </Waypoint>
+                                                <Waypoint routeStrategy="fastest">
+                                                    <Position>
+                                                        <WorldPosition x="137.747406" y="-8.945434" z="10.039836" h="-0.00044804639014223"/>
+                                                    </Position>
+                                                </Waypoint>
+                                                <Waypoint routeStrategy="fastest">
+                                                    <Position>
+                                                        <WorldPosition x="137.747406" y="-8.945434" z="10.039836" h="-0.00044804639014223"/>
+                                                    </Position>
+                                                </Waypoint>
+                                                <Waypoint routeStrategy="fastest">
+                                                    <Position>
+                                                        <WorldPosition x="136.923752" y="-10.767961" z="10.039836" h="-0.00044804639014223"/>
+                                                    </Position>
+                                                </Waypoint>
+                                                <Waypoint routeStrategy="fastest">
+                                                    <Position>
+                                                        <WorldPosition x="136.100113" y="-12.590487" z="10.039836" h="-0.00044804639014223"/>
+                                                    </Position>
+                                                </Waypoint>
+                                                <Waypoint routeStrategy="fastest">
+                                                    <Position>
+                                                        <WorldPosition x="135.276459" y="-14.413014" z="10.039836" h="-0.00044804639014223"/>
+                                                    </Position>
+                                                </Waypoint>
+                                            </Route>
+                                        </AssignRouteAction>
+                                    </RoutingAction>
+                                </PrivateAction>
+                            </Action>
+                            <StartTrigger>
+                                <ConditionGroup>
+                                    <Condition name="MovingForward" delay="0" conditionEdge="rising">
+                                        <ByValueCondition>
+                                            <SimulationTimeCondition value="0.0" rule="greaterThan"/>
+                                        </ByValueCondition>
+                                    </Condition>
+                                </ConditionGroup>
+                            </StartTrigger>
+                        </Event>
+                        <Event name="StandingStill" priority="overwrite">
+                            <Action name="StandingStill">
+                                <PrivateAction>
+                                    <LongitudinalAction>
+                                        <SpeedAction>
+                                            <SpeedActionDynamics dynamicsShape="step" value="0.1" dynamicsDimension="time"/>
+                                            <SpeedActionTarget>
+                                                <AbsoluteTargetSpeed value="0"/>
+                                            </SpeedActionTarget>
+                                        </SpeedAction>
+                                    </LongitudinalAction>
+                                </PrivateAction>
+                            </Action>
+                            <StartTrigger>
+                                <ConditionGroup>
+                                    <Condition name="Condition for Maneuver ID 1" delay="5" conditionEdge="rising">
+                                        <ByEntityCondition>
+                                            <TriggeringEntities triggeringEntitiesRule="any">
+                                                <EntityRef entityRef="ego_vehicle"/>
+                                            </TriggeringEntities>
+                                            <EntityCondition>
+                                                <ReachPositionCondition tolerance="4.0">
+                                                    <Position>
+                                                       <WorldPosition x="135.276459" y="-14.413014" z="10.039836" h="-0.00044804639014223"/>
+                                                    </Position>
+                                                </ReachPositionCondition>
+                                            </EntityCondition>
+                                        </ByEntityCondition>
+                                    </Condition>
+                                </ConditionGroup>
+                            </StartTrigger>
+                        </Event>
+                        <Event name="Event Maneuver ID 2" priority="overwrite">
+                            <Action name="Action for Manuever ID 2">
+                                <PrivateAction>
+                                    <LongitudinalAction>
+                                        <SpeedAction>
+                                            <SpeedActionDynamics dynamicsShape="step" value="1000" dynamicsDimension="time"/>
+                                            <SpeedActionTarget>
+                                                <AbsoluteTargetSpeed value="-0.1"/>
+                                            </SpeedActionTarget>
+                                        </SpeedAction>
+                                    </LongitudinalAction>
+                                </PrivateAction>
+                            </Action>
+                            <StartTrigger>
+                                <ConditionGroup>
+                                    <Condition name="Condition for Maneuver ID 2" delay="5" conditionEdge="rising">
+                                        <ByEntityCondition>
+                                            <TriggeringEntities triggeringEntitiesRule="any">
+                                                <EntityRef entityRef="ego_vehicle"/>
+                                            </TriggeringEntities>
+                                            <EntityCondition>
+                                                <StandStillCondition duration="1"/>
+                                            </EntityCondition>
+                                        </ByEntityCondition>
+                                    </Condition>
+                                </ConditionGroup>
+                            </StartTrigger>
+                        </Event>
+                    </Maneuver>
+                </ManeuverGroup>
+                <StartTrigger>
+                    <ConditionGroup>
+                        <Condition name="StartTime" delay="0" conditionEdge="rising">
+                            <ByValueCondition>
+                                <SimulationTimeCondition rule="equalTo" value="0"/>
+                            </ByValueCondition>
+                        </Condition>
+                    </ConditionGroup>
+                </StartTrigger>
+                <StopTrigger>
+                    <ConditionGroup>
+                        <Condition name="Condition for Maneuver ID 1" delay="10" conditionEdge="rising">
+                            <ByEntityCondition>
+                                <TriggeringEntities triggeringEntitiesRule="any">
+                                    <EntityRef entityRef="ego_vehicle"/>
+                                </TriggeringEntities>
+                                <EntityCondition>
+                                    <ReachPositionCondition tolerance="3.0">
+                                        <Position>
+                                            <WorldPosition x="158.214310" y="-6.308730" z="10.039836" h="-0.00044804639014223"/>
+                                        </Position>
+                                    </ReachPositionCondition>
+                                </EntityCondition>
+                            </ByEntityCondition>
+                        </Condition>
+                    </ConditionGroup>
+                </StopTrigger>
+            </Act>
+        </Story>
+        <StopTrigger>
+            <ConditionGroup>
+                <Condition name="criteria_DrivenDistanceTest" delay="0.0" conditionEdge="rising">
+                    <ByValueCondition>
+                        <ParameterCondition parameterRef="distance_success" value="47" rule="greaterThan"/>
+                    </ByValueCondition>
+                </Condition>
+                <Condition name="criteria_RAScenarioTest" delay="0.0" conditionEdge="rising">
+                    <ByValueCondition>
+                        <ParameterCondition parameterRef="distance_success" value="4" rule="lessThan"/>
+                    </ByValueCondition>
+                </Condition>
+            </ConditionGroup>
+        </StopTrigger>
+    </Storyboard>
+</OpenSCENARIO>
