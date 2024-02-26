@@ -81,7 +81,7 @@ In the ROS bridge, the scenario runner is available as a wrapper that enables th
 of the scenario using the ROS interface. Using this feature, the scenario can be executed
 within the ROS bridge and enables communication of other ROS-based functions with
 the scenario runner. Reversing Assist is based on the ROS which works by
-subscribing and publishing to different ROS topics available in the ROS bridge.</br></br>
+subscribing and publishing to different ROS topics available in the ROS bridge.</br>
 
  <h2>Working Environment</h2>
 The basic working environment for the scenario-based testing can be summarised as follows:
@@ -114,6 +114,8 @@ be processed to run the scenarios. The scenario runner can be also executed unde
 ROS bridge as a wrapper which improves the useability of the feature.
 
 <h2>ASAM OpenSCENARIO</h2>
+<img src="/Master Thesis/openscenario.png" alt="OpenSCENARIO" title="OpenSCENARIO">  
+</br></br>
 OpenSCENARIO defines a file format for the description of dynamic content in driving
 simulation applications. It is used to describe complex, synchronized maneuvers that
 involve multiple entities like vehicles, pedestrians, and other traffic participants. Different types of scenarios can be defined using the OpenSCENARIO standard and can be used
@@ -128,6 +130,9 @@ forward motion of the vehicle, a standstill condition, and a reverse motion of t
 The forward motion of the vehicle is controlled by the simulation and the reverse motion is
 controlled by the Reversing Assist function. The standstill condition is required so that the vehicle does
 not abruptly change direction and acts as a point to start activating the Reversing Assist function.
+</br></br>
+
+<img src="/Master Thesis/Scenario definition.jpg" alt="Scenario definition" title="Scenario definition">  
 </br></br>
 As the Reversing Assist function is mainly used in the parking lot, the scenario is defined for the
 parallel parking of a vehicle starting from the entry of the parking lot. In the figure the dotted line shows the approximate
@@ -170,19 +175,24 @@ Based on the OpenSCENARIO file, the following three events are created for the s
     - Reverse motion controlled by the Reversing Assist using Ackermann Control
     - StartTrigger (Act) --> SimulationTimeCondition 
     - StopTrigger (Act) --> ReachPositionCondition --> Initial starting Position
-    
+</br></br>  
+<img src="/Master Thesis/parkingscenario.png" alt="OpenSCENARIO" title="OpenSCENARIO">  
+ 
 <h2>Scenario Evaluation</h2>
     
 In the scenario runner, there are atomic evaluation criteria available that analyze
 whether the scenario was completed successfully or failed. This is included as a
 StopTrigger in the OpenSCENARIO file since there are no evaluation/test criteria available
-in the official OpenSCENARIO 1.0 release. To test the Reverse Assist in the OpenSCENARIO, a custom atomic criterion is needed
+in the official OpenSCENARIO 1.0 release. 
+
+To test the Reverse Assist in the OpenSCENARIO, a custom atomic criterion is needed
 as the already existing criteria are not suitable to use. The custom atomic criteria or
 ‘RAScenarioTest’ is used in the OpenSCENARIO file to evaluate the scenario along with
 the Reversing Assist. The main idea behind the RAScenarioTest is that it calculates the distance
 between the initial starting position of the ego vehicle and the final position of the ego
 vehicle after reversing to the starting position. If the distance is less than a threshold value,
 the evaluation results will be SUCCESS, meaning the scenario is executed successfully.
+
 
 <h2>Conclusion</h2>
 This thesis emphasized the importance of digital twin and simulation in the testing and validation
