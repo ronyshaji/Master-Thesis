@@ -193,7 +193,7 @@ between the initial starting position of the ego vehicle and the final position 
 vehicle after reversing to the starting position. If the distance is less than a threshold value,
 the evaluation results will be SUCCESS, meaning the scenario is executed successfully.
 </br> </br> 
-<img src="/Master Thesis/parkingscenario.png" alt="OpenSCENARIO" title="OpenSCENARIO">  
+<img src="/Master Thesis/evaluation.png" alt="OpenSCENARIO Evaluation" title="OpenSCENARIO Evaluation">  
 
 In the figure, the criterion <b><i>'RAScenarioTest'</b></i> tells whether the scenario testing is success or failure based on the position of the ego vehicle. If the ego vehicle is within a tolerance level(here tolerance is 4.0), then the scenario is sucess. In this case, after the scenario execution the distance between the initial starting position of ego vehicle and final position after reversing is 3.2 and since it is less than the tolerance, the result is SUCCESS. The rectangle shaped box represents the ego vehicle and the star represents the final position. 
 
