@@ -124,15 +124,16 @@ along with the static road network standard OpenDRIVE.
 
 <h2>Scenario Definition for Reversing Assist Testing</h2>
 
+
+
+<img src="/Master Thesis/Scenario definition.jpg" alt="Scenario definition" title="Scenario definition">  
+</br></br>
 To validate the Reversing Assist function with OpenSCENARIO, the scenario must be defined first
 so that it can be written with OpenSCENARIO syntax. The scenario should include a
 forward motion of the vehicle, a standstill condition, and a reverse motion of the vehicle.
 The forward motion of the vehicle is controlled by the simulation and the reverse motion is
 controlled by the Reversing Assist function. The standstill condition is required so that the vehicle does
 not abruptly change direction and acts as a point to start activating the Reversing Assist function.
-</br></br>
-
-<img src="/Master Thesis/Scenario definition.jpg" alt="Scenario definition" title="Scenario definition">  
 </br></br>
 As the Reversing Assist function is mainly used in the parking lot, the scenario is defined for the
 parallel parking of a vehicle starting from the entry of the parking lot. In the figure the dotted line shows the approximate
@@ -150,10 +151,11 @@ vehicle can reverse based on the forward motion. So, to test the Reversing Assis
 custom parking lot is very much required. RoadRunner, which is owned by MATLAB, is the recommended tool for creating a custom
 map because it can export the map in different formats which can be later
 imported into the simulation engine. RoadRunner has the option to create different types of roads based on the user’s requirements. 
-
+</br> </br> 
+<img src="/Master Thesis/parkingscenario.png" alt="OpenSCENARIO" title="OpenSCENARIO">  
 <h2>OpenSCENARIO Definition for Reversing Assist Testing</h2>
 
-Based on the OpenSCENARIO file, the following three events are created for the scenario based testing. Here the syntax of the OpenSCENARIO standard is used in order to describe the scenario.
+Based on the [OpenSCENARIO file](Master Thesis/waypointp7.xosc), the following three events are created for the scenario based testing. Here the syntax of the OpenSCENARIO standard is used in order to describe the scenario.
 
  - Event 1 - Forward Motion: Vehicle drives forward using an Autonomous Driving agent
     - MovingForward event is based on RoutingAction.
@@ -175,8 +177,8 @@ Based on the OpenSCENARIO file, the following three events are created for the s
     - Reverse motion controlled by the Reversing Assist using Ackermann Control
     - StartTrigger (Act) --> SimulationTimeCondition 
     - StopTrigger (Act) --> ReachPositionCondition --> Initial starting Position
-</br></br>  
-<img src="/Master Thesis/parkingscenario.png" alt="OpenSCENARIO" title="OpenSCENARIO">  
+</br> 
+
  
 <h2>Scenario Evaluation</h2>
     
@@ -192,7 +194,10 @@ the Reversing Assist. The main idea behind the RAScenarioTest is that it calcula
 between the initial starting position of the ego vehicle and the final position of the ego
 vehicle after reversing to the starting position. If the distance is less than a threshold value,
 the evaluation results will be SUCCESS, meaning the scenario is executed successfully.
+</br> </br> 
+<img src="/Master Thesis/parkingscenario.png" alt="OpenSCENARIO" title="OpenSCENARIO">  
 
+In the figure, the criterion 'RAScenarioTest' tells whether the scenario testing is success or failure based on the position of the ego vehicle. If the ego vehicle is within a tolerance level(here tolerance is 4.0), then the scenario is sucess. In this case, after the scenario execution the distance between the initial starting position of ego vehicle and final position after reversing is 3.2 and since it is less than the tolerance, the result is SUCCESS. The rectangle shaped box represents the ego vehicle and the star represents the final position. 
 
 <h2>Conclusion</h2>
 This thesis emphasized the importance of digital twin and simulation in the testing and validation
