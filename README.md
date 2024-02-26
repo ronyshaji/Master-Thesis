@@ -2,7 +2,7 @@
 <b>Course:</b> <i>International Automotive Engineering, TH Ingolstadt</i></br>
 <b>Company:</b> <i>Porsche Engineering Services GmbH, Bietigheim-Bissingen</i></br>
 <b>Submitted by:</b> <i>Rony Shaji</i>
-
+</br></br>
 
 <img src="/Master Thesis/Overview.png" alt="Scenario Based Testing" title="Scenario Based Testing">   
 
@@ -124,10 +124,8 @@ along with the static road network standard OpenDRIVE.
 
 <h2>Scenario Definition for Reversing Assist Testing</h2>
 
-
-
 <img src="/Master Thesis/Scenario definition.jpg" alt="Scenario definition" title="Scenario definition">  
-</br></br>
+
 To validate the Reversing Assist function with OpenSCENARIO, the scenario must be defined first
 so that it can be written with OpenSCENARIO syntax. The scenario should include a
 forward motion of the vehicle, a standstill condition, and a reverse motion of the vehicle.
@@ -155,21 +153,21 @@ imported into the simulation engine. RoadRunner has the option to create differe
 <img src="/Master Thesis/parkingscenario.png" alt="OpenSCENARIO" title="OpenSCENARIO">  
 <h2>OpenSCENARIO Definition for Reversing Assist Testing</h2>
 
-Based on the [OpenSCENARIO file](Master Thesis/waypointp7.xosc), the following three events are created for the scenario based testing. Here the syntax of the OpenSCENARIO standard is used in order to describe the scenario.
+Based on the [OpenSCENARIO file](https://github.com/ronyshaji/Master-Thesis/blob/b119b6d0ef773dfaf6554995b47a752f21f793d1/Master%20Thesis/waypointp7.xosc), the following three events are created for the scenario based testing. Here the syntax of the OpenSCENARIO standard is used in order to describe the scenario.
 
- - Event 1 - Forward Motion: Vehicle drives forward using an Autonomous Driving agent
+ - <b><i>Event 1 - Forward Motion: Vehicle drives forward using an Autonomous Driving agent</b></i>
     - MovingForward event is based on RoutingAction.
     - RoutingAction: Specify the route an entity should follow
     - AssignRouteAction – Using waypoints on the road network with the route strategy
     - StartTrigger – MovingForward starts when simulation time starts
     - Simulation controls the forward motion of the vehicle
     
- - Event 2 – Standstill: Vehicle standstill for 1 second after completing the forward motion
+ - <b><i>Event 2 – Standstill: Vehicle standstill for 1 second after completing the forward motion</b></i>
     - StandingStill Event with a ‘StandingStill’ Action
     - Longitudinal Action with zero absolute velocity
     - StartTrigger is based on a ConditionGroup in which two conditions are used
     - TriggeringEntities and ReachPositionCondition --> Last waypoint from the Event ‘MovingForward'
- - Event 3 – Reverse Motion: Vehicle follows the forward path and controlled by Reversing Assist
+ - <b><i>Event 3 – Reverse Motion: Vehicle follows the forward path and controlled by Reversing Assist</b></i>
     - Event ‘Reversing Using RA’ comes with a LongitudinalAction 
     - Longitudinal Action with negative absolute velocity --> Target Velocity
     - Negative velocity is required to activate the Reversing Assist within OpenSCENARIO
@@ -197,7 +195,7 @@ the evaluation results will be SUCCESS, meaning the scenario is executed success
 </br> </br> 
 <img src="/Master Thesis/parkingscenario.png" alt="OpenSCENARIO" title="OpenSCENARIO">  
 
-In the figure, the criterion 'RAScenarioTest' tells whether the scenario testing is success or failure based on the position of the ego vehicle. If the ego vehicle is within a tolerance level(here tolerance is 4.0), then the scenario is sucess. In this case, after the scenario execution the distance between the initial starting position of ego vehicle and final position after reversing is 3.2 and since it is less than the tolerance, the result is SUCCESS. The rectangle shaped box represents the ego vehicle and the star represents the final position. 
+In the figure, the criterion <b><i>'RAScenarioTest'</b></i> tells whether the scenario testing is success or failure based on the position of the ego vehicle. If the ego vehicle is within a tolerance level(here tolerance is 4.0), then the scenario is sucess. In this case, after the scenario execution the distance between the initial starting position of ego vehicle and final position after reversing is 3.2 and since it is less than the tolerance, the result is SUCCESS. The rectangle shaped box represents the ego vehicle and the star represents the final position. 
 
 <h2>Conclusion</h2>
 This thesis emphasized the importance of digital twin and simulation in the testing and validation
